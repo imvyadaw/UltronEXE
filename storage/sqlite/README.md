@@ -1,0 +1,1 @@
+Not used yet. Reserved for a future structured-data store (e.g. memory/long_term or memory/history moving off flat files). Today's persistence is plain JSON/text: storage/cache/ultron_usage.json and memory/short_term/notes.py's ultron_notes.txt.

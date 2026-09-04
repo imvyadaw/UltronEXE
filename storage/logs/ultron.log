@@ -1,0 +1,159 @@
+2026-09-02 05:08:05,773 [ERROR] ultron.ui.notifications: [ultron] Security alert: 3 failed unlock attempts
+2026-09-03 18:33:37,898 [INFO] ultron.shutdown: Ultron shutdown complete.
+2026-09-03 19:09:39,713 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:09:39,713 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:09:39,714 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:09:39,714 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:09:39,715 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:09:39,803 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:09:39,803 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:09:39,817 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:09:39,817 [INFO] ultron.orchestrator: Retrying step 'Clarify what success looks like for check disk space' unchanged
+2026-09-03 19:09:39,828 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:09:39,829 [INFO] ultron.orchestrator: Retrying step 'Take the first concrete action on check disk space' unchanged
+2026-09-03 19:09:39,839 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:09:39,839 [INFO] ultron.orchestrator: Retrying step 'Follow through and close out check disk space' unchanged
+2026-09-03 19:09:39,840 [INFO] ultron.orchestrator: Goal 'check disk space' stopping: max_iterations reached (3)
+2026-09-03 19:11:51,036 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:11:51,036 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:51,036 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:51,037 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:51,037 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:51,094 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:11:51,095 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:11:51,222 [INFO] ultron.progress_tracker: goal 751ab0a975d9 auto-completed - all steps done
+2026-09-03 19:11:51,222 [INFO] ultron.orchestrator: Goal 'check disk space' stopping: max_iterations reached (3)
+2026-09-03 19:11:59,215 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:11:59,215 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:59,215 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:59,216 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:59,216 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:11:59,267 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:11:59,267 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:11:59,353 [INFO] ultron.progress_tracker: goal 97e074bad8aa auto-completed - all steps done
+2026-09-03 19:11:59,353 [INFO] ultron.orchestrator: Goal 'check disk space' stopping: max_iterations reached (3)
+2026-09-03 19:12:19,025 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:12:19,026 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:12:19,026 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:12:19,026 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:12:19,026 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:12:19,075 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:12:19,075 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:12:19,165 [INFO] ultron.progress_tracker: goal 342a0b19d750 auto-completed - all steps done
+2026-09-03 19:12:19,165 [INFO] ultron.orchestrator: Goal 'check disk space' stopping: max_iterations reached (3)
+2026-09-03 19:12:19,188 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:12:19,188 [INFO] ultron.orchestrator: Retrying step 'Identify what 'done' looks like for learn python basics' unchanged
+2026-09-03 19:12:19,205 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:12:19,205 [INFO] ultron.orchestrator: Retrying step 'Gather learning resources for learn python basics' unchanged
+2026-09-03 19:12:19,223 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:12:19,223 [INFO] ultron.orchestrator: Retrying step 'Work through the basics of learn python basics' unchanged
+2026-09-03 19:12:19,223 [INFO] ultron.orchestrator: Goal 'learn python basics' stopping: 3 consecutive failures
+2026-09-03 19:13:18,110 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:13:18,110 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:18,110 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:18,110 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:18,110 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:18,174 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:13:18,174 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:13:18,195 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:18,195 [INFO] ultron.orchestrator: Retrying step 'Identify what 'done' looks like for learn python basics' unchanged
+2026-09-03 19:13:18,212 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:18,212 [INFO] ultron.orchestrator: Retrying step 'Gather learning resources for learn python basics' unchanged
+2026-09-03 19:13:18,229 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:18,229 [INFO] ultron.orchestrator: Retrying step 'Work through the basics of learn python basics' unchanged
+2026-09-03 19:13:18,229 [INFO] ultron.orchestrator: Goal 'learn python basics' stopping: 3 consecutive failures
+2026-09-03 19:13:51,817 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:13:51,818 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:51,818 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:51,818 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:51,818 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:13:51,881 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:13:51,881 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:13:51,906 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:51,906 [INFO] ultron.orchestrator: Retrying step 'Reproduce the issue behind fix the wifi issue' unchanged
+2026-09-03 19:13:51,930 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:51,930 [INFO] ultron.orchestrator: Retrying step 'Narrow down the root cause of fix the wifi issue' unchanged
+2026-09-03 19:13:51,954 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:51,954 [INFO] ultron.orchestrator: Retrying step 'Apply a fix for fix the wifi issue' unchanged
+2026-09-03 19:13:51,954 [INFO] ultron.orchestrator: Goal 'fix the wifi issue' stopping: 3 consecutive failures
+2026-09-03 19:13:52,000 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:13:52,008 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:52,008 [INFO] ultron.orchestrator: Retrying step 'Verify fix the wifi issue is actually resolved' unchanged
+2026-09-03 19:13:52,032 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:13:52,034 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:52,034 [INFO] ultron.orchestrator: Retrying step 'Write down requirements for build a new report' unchanged
+2026-09-03 19:13:52,058 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:13:52,060 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:52,060 [INFO] ultron.orchestrator: Retrying step 'Sketch the design/approach for build a new report' unchanged
+2026-09-03 19:13:52,060 [INFO] ultron.orchestrator: Goal 'build a new report' stopping: 3 consecutive failures
+2026-09-03 19:13:52,077 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:13:52,079 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:52,079 [INFO] ultron.orchestrator: Retrying step 'Build the core of build a new report' unchanged
+2026-09-03 19:13:52,090 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:13:52,091 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:13:52,091 [INFO] ultron.orchestrator: Retrying step 'Test build a new report' unchanged
+2026-09-03 19:13:52,176 [INFO] ultron.orchestrator: Goal 'research disk space usage' stopping: max_iterations reached (6)
+2026-09-03 19:14:48,221 [INFO] ai_router: groq cloud backend not configured (No module named 'groq') - skipping.
+2026-09-03 19:14:48,221 [INFO] ai_router: nvidia cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:14:48,222 [INFO] ai_router: deepseek cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:14:48,222 [INFO] ai_router: openrouter cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:14:48,222 [INFO] ai_router: xkiro cloud backend not configured (No module named 'openai') - skipping.
+2026-09-03 19:14:48,275 [INFO] ai_router: gemini cloud backend not configured (GEMINI_API_KEY not found! Set it in .env to enable the Gemini fallback.) - skipping.
+2026-09-03 19:14:48,275 [WARNING] ai_router: No cloud AI backend is configured (Groq/NVIDIA/Gemini) - local-only until .env is fixed and Ultron restarts.
+2026-09-03 19:14:48,296 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,296 [INFO] ultron.orchestrator: Retrying step 'Reproduce the issue behind fix the wifi issue' unchanged
+2026-09-03 19:14:48,316 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,316 [INFO] ultron.orchestrator: Retrying step 'Narrow down the root cause of fix the wifi issue' unchanged
+2026-09-03 19:14:48,338 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,338 [INFO] ultron.orchestrator: Retrying step 'Apply a fix for fix the wifi issue' unchanged
+2026-09-03 19:14:48,338 [INFO] ultron.orchestrator: Goal 'fix the wifi issue' stopping: 3 consecutive failures
+2026-09-03 19:14:48,380 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:14:48,386 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,386 [INFO] ultron.orchestrator: Retrying step 'Write down requirements for build a new report' unchanged
+2026-09-03 19:14:48,410 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:14:48,412 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,412 [INFO] ultron.orchestrator: Retrying step 'Sketch the design/approach for build a new report' unchanged
+2026-09-03 19:14:48,426 [WARNING] ultron.error_handler: [execute_tool_call] failed (attempt 1/2, category=unknown): api_doc_path, skill_name, and base_url are required.
+2026-09-03 19:14:48,428 [INFO] ultron.verification.failure_detector: Step classified as VERIFIED_FAILURE, attempt 1 -> action 'retry'
+2026-09-03 19:14:48,428 [INFO] ultron.orchestrator: Retrying step 'Build the core of build a new report' unchanged
+2026-09-03 19:14:48,428 [INFO] ultron.orchestrator: Goal 'build a new report' stopping: 3 consecutive failures
+2026-09-03 19:14:48,517 [INFO] ultron.progress_tracker: goal 5880e1269a20 auto-completed - all steps done
+2026-09-03 19:38:20,034 [INFO] ultron.proactive.predictor: Predictor subscribed to core.event_bus 'action.completed'.
+2026-09-03 20:33:42,179 [INFO] ultron.intelligence_core: [intelligence_core] Phase 20.6 databases connected
+2026-09-03 20:33:42,180 [INFO] ultron.intelligence_core: [intelligence_core] connected to intelligence_bridge
+2026-09-03 20:33:42,182 [INFO] ultron.assistant: [assistant] intelligence layer connected: True
+2026-09-03 20:33:42,185 [INFO] ultron.assistant: [assistant] Phase 18 observer layer connected (consciousness + personality)
+2026-09-03 20:33:42,185 [INFO] ultron.assistant: [assistant] Phase 18 autonomy layer OFF (set ULTRON_AUTONOMY_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,185 [INFO] ultron.assistant: [assistant] Phase 25 proactive engine OFF (set ULTRON_PROACTIVE_ENABLED=true in .env to enable) - running narrow threshold_alerts trigger only
+2026-09-03 20:33:42,185 [INFO] ultron.assistant: [assistant] proactive threshold alerts started (poll every 60.0s)
+2026-09-03 20:33:42,186 [INFO] ultron.assistant: [assistant] self_healing layer connected (health_monitor + auto_recovery)
+2026-09-03 20:33:42,186 [INFO] ultron.assistant: [assistant] learning_engine layer connected (feedback_collector + user_adaptation)
+2026-09-03 20:33:42,205 [INFO] ultron.assistant: [assistant] ultron_shield layer connected (privacy_filter + audit_logger)
+2026-09-03 20:33:42,208 [INFO] ultron.assistant: [assistant] mission_engine connected (mission persistence + auto-resume)
+2026-09-03 20:33:42,209 [INFO] ultron.assistant: [assistant] tool_chain_optimizer connected
+2026-09-03 20:33:42,209 [INFO] ultron.assistant: [assistant] capability_isolation connected (active profile: default)
+2026-09-03 20:33:42,212 [INFO] ultron.assistant: [assistant] evidence_ledger connected
+2026-09-03 20:33:42,212 [INFO] ultron.assistant: [assistant] failure_pattern_engine connected
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] conversation_layer connected (turn history + reference resolution + tone detection)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] voice_intelligence OFF (set ULTRON_VOICE_INTELLIGENCE_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] computer_vision OFF (set ULTRON_COMPUTER_VISION_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] deep_os_integration OFF (set ULTRON_DEEP_OS_INTEGRATION_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] cross_device OFF (set ULTRON_CROSS_DEVICE_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] quantum_dashboard OFF (set ULTRON_QUANTUM_DASHBOARD_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] ultron_shield OFF (set ULTRON_SHIELD_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] predictive_engine OFF (set ULTRON_PREDICTIVE_ENGINE_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] self_healing OFF (set ULTRON_SELF_HEALING_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] skill_creator OFF (set ULTRON_SKILL_CREATOR_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] multi_agent_swarm OFF (set ULTRON_MULTI_AGENT_SWARM_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] adaptive_ui OFF (set ULTRON_ADAPTIVE_UI_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] cognitive_layer OFF (set ULTRON_COGNITIVE_LAYER_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,215 [INFO] ultron.assistant: [assistant] specialist_agents OFF (set ULTRON_SPECIALIST_AGENTS_ENABLED=true in .env to enable)
+2026-09-03 20:33:42,329 [INFO] ultron.proactive.predictor: Predictor subscribed to core.event_bus 'action.completed'.
+2026-09-03 20:33:42,348 [INFO] vector_db: Vector store backend selected: VectorStore
+2026-09-04 09:03:40,866 [INFO] ultron.finance.expenses: expense_tracker: logged 500.0 in 'food' ('zomato order')
+2026-09-04 09:03:40,869 [INFO] ultron.finance.expenses: expense_tracker: logged 200.0 in 'transport' ('uber ride to office')
+2026-09-04 09:03:40,871 [INFO] ultron.finance.expenses: expense_tracker: logged 950.0 in 'food' ('big grocery run')
+2026-09-04 09:03:54,158 [INFO] ultron.finance.expenses: expense_tracker: logged 250.0 in 'food' ('lunch')
+2026-09-04 10:25:37,182 [INFO] ultron.finance.expenses: expense_tracker: logged 500.0 in 'food' ('zomato order')
+2026-09-04 10:25:37,184 [INFO] ultron.finance.expenses: expense_tracker: logged 200.0 in 'transport' ('uber ride to office')
+2026-09-04 10:25:37,186 [INFO] ultron.finance.expenses: expense_tracker: logged 950.0 in 'food' ('big grocery run')

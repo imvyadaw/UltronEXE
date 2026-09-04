@@ -1,0 +1,14 @@
+{
+  "meeting_request": {
+    "subject": "Meeting Request: {topic}",
+    "body": "Hi {name},\n\nCould we schedule a meeting to discuss {topic}? I'm available {availability}.\n\nBest,\n{sender}"
+  },
+  "follow_up": {
+    "subject": "Following up: {topic}",
+    "body": "Hi {name},\n\nJust following up on {topic}. Let me know if you need anything else from my side.\n\nBest,\n{sender}"
+  },
+  "thank_you": {
+    "subject": "Thank you!",
+    "body": "Hi {name},\n\nThank you for {reason}. It's much appreciated.\n\nBest,\n{sender}"
+  }
+}
