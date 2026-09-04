@@ -97,6 +97,15 @@ ultralytics>=8.2.0
 # of vision/face/detection.py's plain bounding-box detection). Optional: on
 # Windows this needs CMake + a C++ build toolchain for dlib - see the
 # module's docstring. Everything else in vision/ works fine without it.
+#
+# face_recognition_models (a dependency of face_recognition below) still does
+# `from pkg_resources import resource_filename` at import time. Recent
+# Python/pip setups (incl. GitHub Actions windows-latest + setup-python 3.11)
+# no longer install setuptools by default, so pkg_resources is missing and
+# PyInstaller's import step dies with "ModuleNotFoundError: No module named
+# 'pkg_resources'" -> face_recognition_models calls quit() -> SystemExit ->
+# PyInstaller build aborts. Explicit setuptools pin fixes it.
+setuptools>=68.0.0
 face_recognition>=1.3.0
 
 # Vision - hand gesture detection (hand_landmarker.task model auto-downloaded
