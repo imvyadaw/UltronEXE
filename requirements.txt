@@ -1,0 +1,169 @@
+# Core requirements - installs on Windows, Linux, and Mac
+# Install first: pip install -r requirements.txt
+
+# Core
+groq>=0.11.0
+openai>=1.30.0   # ai/cloud_models/nvidia_client.py, deepseek_client.py, openrouter_client.py - all OpenAI-compatible endpoints
+python-dotenv>=1.0.0
+flask>=3.0,<4.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Voice (text-to-speech) - neural voices (en-IN-NeerjaNeural, en-IN-PrabhatNeural,
+# en-US-AvaNeural, ...) via the edge_tts Python library (async, used directly -
+# no CLI subprocess needed). pygame is the playback fallback when the optional
+# `mpv` binary isn't on PATH (mpv, if installed, is used automatically for lower
+# playback overhead - not a pip package, install separately if you want it).
+edge-tts>=6.1.0
+pygame>=2.5.0
+
+# Voice (speech-to-text / wake word / microphone input)
+SpeechRecognition>=3.10.0
+PyAudio>=0.2.13     # Windows: if pip install fails, use: pip install pipwin && pipwin install pyaudio
+
+# Voice (offline STT fallback) - local Whisper via faster-whisper, used by
+# voice/stt/stt_engine.py + voice/stt/local_whisper.py whenever there's no
+# internet (or STT_MODE=local in .env). Model weights auto-download on
+# first use and cache under storage/cache/models/whisper/. Optional but
+# needed for voice control to keep working with zero internet - without
+# it, STT_MODE="auto" silently has no offline leg.
+faster-whisper>=1.0.0
+
+# Voice Phase 9 - additional free-tier engines, all optional (each engine
+# fails soft and falls through to the next configured one if its package
+# isn't installed - see config.py's Phase 9 block for the selection knobs).
+openwakeword>=0.6.0       # real-time wake word detection - voice/wakeword/detector.py
+                            # (models auto-download on first use; onnxruntime
+                            # is pulled in automatically as its dependency)
+vosk>=0.3.45              # offline STT incl. Hindi - voice/stt/vosk_stt.py
+                            # (model weights NOT auto-downloaded - see
+                            # config.VOSK_MODEL_PATH_EN / VOSK_MODEL_PATH_HI)
+gTTS>=2.5.0               # online TTS, more languages incl. Hindi - voice/tts/gtts_tts.py
+click>=8.1.3,<8.2          # PHASE_29_A_STABILITY/A2: gTTS pins click<8.2,>=7.1 while
+                            # flask>=3.0 (ui/web_ui) pins click>=8.1.3 - only 8.1.3-8.1.x
+                            # satisfies both. Pinned explicitly so pip's resolver can't
+                            # silently land on click>=8.2 (breaks gTTS) or <8.1.3 (breaks flask).
+pyttsx3>=2.90             # fully offline TTS via OS-native voices - voice/tts/pyttsx_tts.py
+
+# Telegram bot (optional - only needed if you run telegram_bot.py)
+python-telegram-bot>=20.0
+
+# Security (Phase 5) - at-rest encryption for security/vault.py. Optional:
+# security/encryption.py raises a clear error at call time (not import time)
+# if this isn't installed.
+cryptography>=42.0.0
+
+# Networking (Phase 5) - optional, only needed for the specific client used
+paramiko>=3.4.0             # networking/ssh_client.py (SSH/SFTP)
+websocket-client>=1.7.0     # networking/websocket.py
+# networking/http_client.py reuses the `requests` dependency above.
+# networking/ftp_client.py uses the standard library ftplib - no extra package.
+
+# Cross-device companion server (Phase 30, gated behind ULTRON_CROSS_DEVICE_ENABLED)
+websockets>=12.0            # cross_device/websocket_server.py, cross_device/companion_api.py
+                             # (server-capable async lib - distinct from the
+                             # client-only websocket-client above)
+
+# UI - system tray icon + voice orb / dashboard / overlay (optional; --ui flag,
+# or say "UI mode on"/"UI mode off" at any time). The orb/dashboard/overlay
+# windows use tkinter, which ships with the standard python.org installer -
+# no pip package needed for those. pystray below is only for the tray icon.
+pystray>=0.19.5           # tray icon (Pillow above already covers the icon image)
+
+# Windows system control
+psutil>=5.9.0            # process list, battery status
+pycaw>=20230407           # system volume control
+comtypes>=1.2.0           # required by pycaw
+Pillow>=10.0.0            # screenshots
+pyautogui>=0.9.54         # keyboard/mouse automation (Chrome control)
+pyperclip>=1.8.2           # clipboard read/write
+screen_brightness_control>=0.16.0  # screen brightness
+send2trash>=1.8.0          # safe (undoable) file/folder deletion
+
+# Vision - screen OCR (requires the Tesseract binary too, installed separately:
+# Windows: https://github.com/UB-Mannheim/tesseract/wiki | Linux: apt install tesseract-ocr | macOS: brew install tesseract)
+pytesseract>=0.3.10
+
+# Vision - face detection, object detection (YOLOv8n weights auto-downloaded
+# on first use and cached under storage/cache/models/)
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+
+# Vision Phase 10 - vision/object_detection/yolo_detector.py (80-class YOLOv8
+# object detection, replaces the old 20-class MobileNet-SSD detector)
+ultralytics>=8.2.0
+
+# Vision Phase 10 - vision/face/recognition.py (named-person face ID, on top
+# of vision/face/detection.py's plain bounding-box detection). Optional: on
+# Windows this needs CMake + a C++ build toolchain for dlib - see the
+# module's docstring. Everything else in vision/ works fine without it.
+face_recognition>=1.3.0
+
+# Vision - hand gesture detection (hand_landmarker.task model auto-downloaded
+# on first use and cached under storage/cache/models/)
+mediapipe>=0.10.0
+
+# PDF / Office / compression tools
+pypdf>=4.0.0               # PDF read/merge/split/rotate
+reportlab>=4.0.0            # create PDFs from text
+python-docx>=1.1.0          # Word documents
+openpyxl>=3.1.0             # Excel files
+python-pptx>=0.6.23         # PowerPoint files
+
+# Extra browser/automation features
+browser_cookie3>=0.19.0     # read cookies (Chrome/Edge/Firefox)
+pynput>=1.7.6                # macro recording (captures real input events)
+win11toast>=0.35             # native Windows toast notifications (falls back to plyer, then console)
+plyer>=2.1.0                 # notification fallback if win11toast isn't available
+
+# Email / Calendar skills (skills/email/, skills/calendar/) - Gmail + Google
+# Calendar via Google OAuth, Outlook + Outlook Calendar via Microsoft Graph.
+# Only needed if you actually configure the corresponding credentials in .env.
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+msal>=1.28.0
+
+# Web skills (skills/web/) - form_filler.py drives a real automated browser
+# for JS-rendered pages/forms (scraper.py itself only needs requests+bs4,
+# already listed above).
+selenium>=4.20.0
+webdriver-manager>=4.0.0
+
+
+# Automation - triggers & virtual desktops (optional; both have working
+# fallbacks without them - see automation/triggers/file_watcher.py's polling
+# mode and windows/virtual_desktop.py's keyboard-shortcut mode)
+watchdog>=4.0.0              # efficient OS-level file-change notifications for automation/triggers/file_watcher.py
+
+
+# Vision Phase 4 - form/diagram parsing reuse opencv-python-headless + numpy
+# above (already required). Handwriting recognition (vision/handwriting.py)
+# works with pytesseract already installed above, but for much better
+# handwriting/cursive accuracy, optionally also install:
+easyocr>=1.7.0            # optional - model weights auto-download on first use
+
+# AI Phase 3 - free-tier multi-model support (ai/llm/) and richer memory
+# (memory/vector_db/, ai/embeddings.py, ai/rag_engine.py). Every one of
+# these is optional: each module tries the import and falls back to a
+# zero-dependency alternative (hashing embeddings, SQLite vector search,
+# Groq-only routing) if it isn't installed - see the try/except at the top
+# of each file. Gemini and HuggingFace clients use plain `requests` above,
+# so no SDK is required for those two providers.
+sentence-transformers>=2.7.0   # ai/embeddings.py - real neural embeddings (optional)
+chromadb>=0.5.0                 # memory/vector_db/chroma_client.py (optional)
+faiss-cpu>=1.8.0                 # memory/vector_db/faiss_client.py (optional)
+
+# Integration Phase 11 - integration/twitter/poster.py needs OAuth 1.0a
+# request signing to post as a user (reading via Bearer token needs no
+# extra package, just `requests` above). integration/linkedin/network.py
+# and integration/gmail/mailbox.py reuse plain requests / the existing
+# google-api-python-client + google-auth-oauthlib already required for
+# skills/email/gmail.py - no new package needed for either of those.
+requests-oauthlib>=1.3.1
+
+# MCP server (mcp_server.py) - exposes Ultron as an MCP tool over stdio
+# for Claude Desktop / Claude Code / any other MCP client. Pinned below
+# 2.0: the v2 release renamed FastMCP to MCPServer and changed the API;
+# mcp_server.py uses the v1 FastMCP API.
+mcp>=1.2.0,<2

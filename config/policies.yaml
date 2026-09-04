@@ -1,0 +1,3 @@
+risk_levels: [LOW, MEDIUM, HIGH, CRITICAL]
+autonomous: {LOW: true, MEDIUM: false, HIGH: false, CRITICAL: false}
+self_evolution: {production_direct_write: false, require_tests: true, require_rollback: true}

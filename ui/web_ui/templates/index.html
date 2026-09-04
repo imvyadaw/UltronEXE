@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Ultron - Chat{% endblock %}
+
+{% block content %}
+<section class="chat">
+    <div id="chat-log" class="chat__log" aria-live="polite"></div>
+
+    <form id="chat-form" class="chat__form">
+        <input
+            id="chat-input"
+            class="chat__input"
+            type="text"
+            placeholder="Talk to Ultron..."
+            autocomplete="off"
+            required
+        >
+        <button type="submit" class="chat__send">Send</button>
+    </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

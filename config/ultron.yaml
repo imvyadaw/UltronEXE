@@ -1,0 +1,4 @@
+name: ULTRON
+version: 1.0
+max_goal_attempts: 2
+self_evolution: sandbox_only

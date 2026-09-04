@@ -1,0 +1,30 @@
+[
+  {
+    "name": "telegram",
+    "description": "Control Ultron remotely via Telegram messages.",
+    "version": "1.0.0",
+    "requires_config": [
+      "TELEGRAM_BOT_TOKEN"
+    ],
+    "built_in": true
+  },
+  {
+    "name": "discord",
+    "description": "Control Ultron remotely via a Discord bot.",
+    "version": "0.1.0",
+    "requires_config": [
+      "DISCORD_BOT_TOKEN"
+    ],
+    "built_in": false
+  },
+  {
+    "name": "slack",
+    "description": "Control Ultron remotely via a Slack app.",
+    "version": "0.1.0",
+    "requires_config": [
+      "SLACK_BOT_TOKEN",
+      "SLACK_APP_TOKEN"
+    ],
+    "built_in": false
+  }
+]

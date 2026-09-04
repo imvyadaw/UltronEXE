@@ -1,0 +1,44 @@
+# Secrets
+.env
+*.env
+!.env.example
+config/secrets.yaml
+
+# Logs
+logs/
+*.log
+storage/logs/
+
+# Cache
+cache/
+storage/cache/
+storage/temp/
+__pycache__/
+*.pyc
+
+# Databases / local state
+*.db
+*.sqlite
+*.sqlite3
+storage/sqlite/
+storage/backups/
+storage/exports/
+database/sqlite/
+database/backups/
+data/
+ultron_data/
+
+# Vector stores
+storage/chroma/
+memory/vector_db/*.index
+
+# Voice / media caches
+cache/voice/
+cache/browser/
+cache/ai/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

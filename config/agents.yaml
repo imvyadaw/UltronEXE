@@ -1,0 +1,1 @@
+agents: {coordinator: coordinator, research: research_agent, coding: coding_agent, analysis: analysis_agent, testing: testing_agent, verification: verification_agent}

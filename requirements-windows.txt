@@ -1,0 +1,8 @@
+# Windows-ONLY requirements - do NOT install on Linux/Mac, will fail the build.
+# Install after requirements.txt, on Windows only:
+#   pip install -r requirements-windows.txt
+
+pygetwindow>=0.0.9        # find/focus windows (Chrome control)
+pywinauto>=0.6.8          # Chrome tab list/close via UI Automation
+pywin32>=306               # Windows API access used by pywinauto
+pyvda>=0.6.0                  # Windows 10/11 virtual desktop control for windows/virtual_desktop.py

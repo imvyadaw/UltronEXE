@@ -1,0 +1,105 @@
+# Default configuration - baseline values shared by every environment.
+# development.yaml / production.yaml only override what differs from here.
+# Secrets (API keys, tokens) never go in these files - they stay in .env
+# (see config.py) or config/secrets.yaml (see secrets.yaml.template).
+
+ai:
+  mode: auto                 # auto | cloud | local  (mirrors config.AI_MODE)
+  model_name: openai/gpt-oss-120b
+  fallback_models:
+    - openai/gpt-oss-20b
+    - llama-3.3-70b-versatile
+    - llama-3.1-8b-instant
+  max_tokens: 1024
+  temperature: 0.7
+  top_p: 1
+  cloud_max_retries: 2
+  cloud_retry_backoff_seconds: 1.5
+
+conversation:
+  max_history_length: 20
+
+tool_selector:
+  enabled: true
+  top_k: 20
+
+memory:
+  vector_db:
+    top_k: 5
+  semantic:
+    top_k: 5
+  procedural:
+    match_threshold: 0.55
+  emotional:
+    trend_window: 5
+
+voice:
+  wake_word: ultron
+  tts_voice: en-IN-NeerjaNeural
+  stt_mode: auto            # auto | cloud | local
+
+logging:
+  level: INFO
+  max_bytes: 2000000
+  backup_count: 3
+
+storage:
+  dir: storage
+  cache_dir: storage/cache
+  logs_dir: storage/logs
+  backups_dir: storage/backups
+  exports_dir: storage/exports
+  temp_dir: storage/temp
+  secure_dir: storage/secure   # security/encryption_keys.py - key + salt, owner-only permissions
+
+# Phase 5 modules - see docs/architecture/phase5_security_networking_monitoring.md
+security:
+  auth:
+    session_ttl_seconds: 900        # security/authentication.py DEFAULT_SESSION_TTL_SECONDS
+    pbkdf2_iterations: 200000
+  audit:
+    enabled: true
+
+networking:
+  http_client:
+    timeout_seconds: 15
+    max_retries: 2
+    retry_backoff_seconds: 1.0
+  ssh_client:
+    default_port: 22
+    timeout_seconds: 10
+    trust_unknown_hosts: false      # only override per-call, not globally
+  ftp_client:
+    default_port: 21
+    use_tls: true
+    timeout_seconds: 10
+  websocket:
+    connect_timeout_seconds: 10
+
+monitoring:
+  resource_monitor:
+    history_size: 60                # rolling snapshots kept in memory
+  health_check:
+    cpu_warning_percent: 90
+    memory_warning_percent: 90
+    disk_warning_percent: 90
+    min_free_disk_gb: 1.0
+  alerts:
+    default_cooldown_seconds: 300   # don't re-fire the same alert more often than this
+    notify_on_health_failure: true
+
+# Phase 7 modules - see docs/architecture/phase7_ui_layer.md
+# Not yet wired in (same situation as security/networking/monitoring above):
+# ui/web_ui/app.py and ui/mobile/api/routes.py keep their own hardcoded
+# DEFAULT_HOST/DEFAULT_PORT constants for now.
+ui:
+  web_ui:
+    host: 127.0.0.1
+    port: 5000
+    debug: false
+  mobile_api:
+    host: 127.0.0.1
+    port: 5001
+    api_prefix: /api/v1
+  voice_ui:
+    avatar_enabled: true

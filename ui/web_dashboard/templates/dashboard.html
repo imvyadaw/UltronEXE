@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ULTRON — Neural Interface</title>
+<link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+
+<div class="nebula"></div>
+<div class="grid-overlay"></div>
+<div class="noise"></div>
+<div class="vignette"></div>
+<div class="bracket tl"></div><div class="bracket tr"></div>
+<div class="bracket bl"></div><div class="bracket br"></div>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="none" stroke="#123544" stroke-width="2"/>
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#4ce0ff" stroke-width="2" stroke-dasharray="30 200" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="6" fill="#4ce0ff" opacity="0.9"/></svg>
+      </div>
+      <div>
+        <div class="brand-title">J&middot;A&middot;R&middot;V&middot;I&middot;S</div>
+        <div class="brand-sub">Neural Interface</div>
+      </div>
+    </div>
+
+    <div class="state-pill idle" id="state-pill">
+      <span class="state-dot" id="state-dot"></span>
+      <span id="state-label">Idle</span>
+    </div>
+
+    <div class="topbar-right">
+      <div class="uptime">
+        <span class="uptime-label">Uptime</span>
+        <span class="uptime-value" id="uptime-value">00:00:00</span>
+      </div>
+      <div class="conn" id="conn-indicator">
+        <span class="conn-dot"></span>
+        <span id="conn-label">Connecting</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <span>MODEL: <b>GROQ ROUTER</b></span>
+    <span>SECURITY: <b>SHIELD ACTIVE</b></span>
+    <span id="ticker-battery" style="display:none;">BATTERY: <b id="ticker-battery-val">-</b></span>
+  </div>
+
+  <main class="grid">
+
+    <!-- LEFT: system stats -->
+    <section class="panel stats-panel">
+      <h2 class="panel-title">System Vitals</h2>
+
+      <div class="gauge-row">
+        <div class="gauge">
+          <svg viewBox="0 0 120 120" class="gauge-svg">
+            <circle cx="60" cy="60" r="52" class="gauge-track"></circle>
+            <circle cx="60" cy="60" r="52" class="gauge-fill" id="cpu-ring"></circle>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-value" id="cpu-value">0%</div>
+            <div class="gauge-label">CPU</div>
+          </div>
+        </div>
+
+        <div class="gauge">
+          <svg viewBox="0 0 120 120" class="gauge-svg">
+            <circle cx="60" cy="60" r="52" class="gauge-track"></circle>
+            <circle cx="60" cy="60" r="52" class="gauge-fill ram" id="ram-ring"></circle>
+          </svg>
+          <div class="gauge-center">
+            <div class="gauge-value" id="ram-value">0%</div>
+            <div class="gauge-label">RAM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-row"><span>RAM used</span><span id="ram-used">- / - GB</span></div>
+      <div class="metric-row"><span>Disk</span><span id="disk-used">- / - GB (-%)</span></div>
+      <div class="metric-row" id="battery-row" style="display:none;">
+        <span>Battery</span><span id="battery-value">-</span>
+      </div>
+
+      <div class="spark">
+        <div class="spark-label">CPU history</div>
+        <canvas id="cpu-chart" class="chart-canvas"></canvas>
+      </div>
+      <div class="spark">
+        <div class="spark-label">RAM history</div>
+        <canvas id="ram-chart" class="chart-canvas"></canvas>
+      </div>
+    </section>
+
+    <!-- CENTER: core + conversation -->
+    <section class="panel core-panel">
+      <div class="core-wrap" id="core-wrap">
+        <div class="rings">
+          <div class="ring outer"></div>
+          <div class="ring sweep"></div>
+          <div class="ring dashed"></div>
+          <div class="ring arc"></div>
+          <div class="ring arc2"></div>
+          <div class="core-center">
+            <div class="core-pct" id="core-label">IDLE</div>
+            <div class="core-lbl" id="core-sub">waiting for wake word</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feed-wrap">
+        <h2 class="panel-title">Live Conversation</h2>
+        <div class="feed" id="feed">
+          <div class="feed-empty" id="feed-empty">Waiting for the first command…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: activity -->
+    <section class="panel activity-panel">
+      <h2 class="panel-title">Activity</h2>
+      <div class="activity-log" id="activity-log">
+        <div class="feed-empty">No tool calls yet</div>
+      </div>
+
+      <h2 class="panel-title image-title">Visual Reference</h2>
+      <div class="image-panel-inner" id="image-panel">
+        <div class="image-empty" id="image-empty">No photo requested yet</div>
+        <img id="dashboard-image" class="dashboard-image" style="display:none;" alt="">
+        <div class="image-caption" id="image-caption" style="display:none;"></div>
+        <a id="image-source-link" class="image-source-link" href="#" target="_blank" rel="noopener" style="display:none;">Source: Wikipedia ↗</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bottom-bar">
+    <div class="hint">Say <b>"Ultron"</b> or use the tray icon — or type a command below</div>
+    <form id="command-form" class="command-form" autocomplete="off">
+      <input id="command-input" class="command-input" type="text"
+             placeholder='Type a command, e.g. "cpu kitna use ho raha hai"' />
+      <button id="command-send" class="command-send" type="submit">Send</button>
+    </form>
+    <div class="waveform" id="waveform"></div>
+  </footer>
+
+</div>
+
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

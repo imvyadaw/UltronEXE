@@ -1,0 +1,167 @@
+:root {
+    --ultron-bg: #0b0e14;
+    --ultron-surface: #131720;
+    --ultron-accent: #4fd1ff;
+    --ultron-text: #e6edf3;
+    --ultron-text-dim: #8b96a5;
+    --ultron-user-bubble: #1f6feb;
+    --ultron-assistant-bubble: #1c2230;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--ultron-bg);
+    color: var(--ultron-text);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ultron-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #1f2530;
+}
+
+.ultron-header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+.ultron-header__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ultron-text-dim);
+}
+
+.ultron-header__dot.online {
+    background: #3fb950;
+}
+
+.ultron-header__dot.stub {
+    background: #d29922;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.chat {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.chat__log {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+}
+
+.chat__bubble {
+    max-width: 80%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.8rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+}
+
+.chat__bubble--user {
+    align-self: flex-end;
+    background: var(--ultron-user-bubble);
+    color: white;
+}
+
+.chat__bubble--assistant {
+    align-self: flex-start;
+    background: var(--ultron-assistant-bubble);
+    color: var(--ultron-text);
+}
+
+.chat__form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat__input {
+    flex: 1;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.6rem;
+    border: 1px solid #232a38;
+    background: var(--ultron-surface);
+    color: var(--ultron-text);
+    font-size: 1rem;
+}
+
+.chat__input:focus {
+    outline: 2px solid var(--ultron-accent);
+}
+
+.chat__send {
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.6rem;
+    border: none;
+    background: var(--ultron-accent);
+    color: #04121c;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.chat__send:hover {
+    filter: brightness(1.1);
+}
+
+/* Phase 13: toasts for ui.notifications, mirrors the level colors used
+   by the desktop dashboard/overlay/tray/orb (info/warning/error). */
+.toast-stack {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+    max-width: 320px;
+}
+
+.toast {
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.5rem;
+    background: var(--ultron-surface);
+    color: var(--ultron-text);
+    border-left: 3px solid var(--ultron-accent);
+    font-size: 0.85rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.toast--warning {
+    border-left-color: #d29922;
+}
+
+.toast--error {
+    border-left-color: #f85149;
+}
+
+.toast--hide {
+    opacity: 0;
+}

@@ -1,0 +1,41 @@
+{
+  "active_profile": "default",
+  "profiles": {
+    "default": {
+      "filesystem_read": "allow",
+      "filesystem_write": "allow",
+      "network": "allow",
+      "shell_exec": "allow",
+      "system_control": "allow",
+      "communication_send": "allow",
+      "automation_ui": "allow",
+      "media_control": "allow",
+      "financial": "allow",
+      "unknown": "allow"
+    },
+    "guest": {
+      "filesystem_read": "allow",
+      "filesystem_write": "allow",
+      "network": "allow",
+      "shell_exec": "deny",
+      "system_control": "deny",
+      "communication_send": "ask",
+      "automation_ui": "allow",
+      "media_control": "allow",
+      "financial": "deny",
+      "unknown": "allow"
+    },
+    "locked_down": {
+      "filesystem_write": "deny",
+      "network": "deny",
+      "shell_exec": "deny",
+      "system_control": "deny",
+      "communication_send": "deny",
+      "automation_ui": "deny",
+      "media_control": "deny",
+      "financial": "deny",
+      "unknown": "deny",
+      "filesystem_read": "allow"
+    }
+  }
+}

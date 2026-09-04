@@ -1,0 +1,35 @@
+# Development overrides - merged on top of default.yaml.
+# Favors fast feedback and visibility over polish/cost.
+
+ai:
+  temperature: 0.7
+  cloud_max_retries: 1        # fail fast locally instead of masking bugs with retries
+
+logging:
+  level: DEBUG
+
+memory:
+  procedural:
+    match_threshold: 0.4      # looser matching so reused procedures are easier to trigger/test
+
+tool_selector:
+  enabled: false               # send the full tool list while testing new tools
+
+storage:
+  temp_dir: storage/temp/dev
+
+security:
+  auth:
+    session_ttl_seconds: 3600   # longer session while developing so you're not re-verifying constantly
+
+networking:
+  ssh_client:
+    trust_unknown_hosts: true    # convenience for connecting to fresh local dev VMs/containers
+
+monitoring:
+  alerts:
+    default_cooldown_seconds: 30  # shorter cooldown so alert logic is actually observable while testing
+
+ui:
+  web_ui:
+    debug: true

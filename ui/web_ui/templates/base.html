@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ultron{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="ultron-header">
+        <span class="ultron-header__dot" id="core-status-dot" title="checking core status..."></span>
+        <h1>Ultron</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

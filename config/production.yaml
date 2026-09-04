@@ -1,0 +1,43 @@
+# Production overrides - merged on top of default.yaml.
+# Favors reliability and lower noise over debug visibility.
+
+ai:
+  temperature: 0.5
+  cloud_max_retries: 3
+  cloud_retry_backoff_seconds: 2.0
+
+logging:
+  level: WARNING
+  backup_count: 7            # keep more rotated logs for post-incident review
+
+memory:
+  procedural:
+    match_threshold: 0.6      # stricter matching - avoid reusing a loosely-related procedure
+
+tool_selector:
+  enabled: true
+  top_k: 15                   # tighter prompt budget in production
+
+voice:
+  stt_mode: cloud              # prefer cloud STT accuracy when available
+
+security:
+  auth:
+    session_ttl_seconds: 300    # shorter unlock window in production - re-verify more often
+
+networking:
+  ssh_client:
+    trust_unknown_hosts: false  # never auto-accept an unseen host key in production
+
+monitoring:
+  health_check:
+    min_free_disk_gb: 5.0       # want more headroom before it's flagged in production
+  alerts:
+    default_cooldown_seconds: 600  # fewer repeat notifications in production
+
+ui:
+  web_ui:
+    host: 0.0.0.0                # bind externally - put behind a reverse proxy, not exposed raw
+    debug: false
+  mobile_api:
+    host: 0.0.0.0
